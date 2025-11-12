@@ -1,16 +1,19 @@
 # Devnullvoid Pvetui
 
-## How do I install these formulae?
+## How do I install this cask?
 
-`brew install devnullvoid/pvetui/<formula>`
+First add the tap, then install the cask:
 
-Or `brew tap devnullvoid/pvetui` and then `brew install <formula>`.
+```bash
+brew tap devnullvoid/pvetui
+brew install --cask pvetui
+```
 
 Or, in a `brew bundle` `Brewfile`:
 
 ```ruby
 tap "devnullvoid/pvetui"
-brew "<formula>"
+cask "pvetui"
 ```
 
 ## Documentation
