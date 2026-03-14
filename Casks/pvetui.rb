@@ -5,7 +5,7 @@ cask "pvetui" do
   name "pvetui"
   desc "Terminal user interface (TUI) for Proxmox VE"
   homepage "https://github.com/devnullvoid/pvetui"
-  version "1.2.0"
+  version "1.2.1"
 
   livecheck do
     skip "Auto-generated on release."
@@ -16,22 +16,22 @@ cask "pvetui" do
   on_macos do
     on_intel do
       url "https://github.com/devnullvoid/pvetui/releases/download/v#{version}/pvetui_#{version}_darwin_amd64.tar.gz"
-      sha256 "f42d51e5e79c40ee3e843ab65f58e75a1a706d6ef040b97bb2ef738332a36c06"
+      sha256 "1eb3ea9d29ad5cab1513388f1d143dd0773cabfb55020d9b5c5dcba4056e9a8c"
     end
     on_arm do
       url "https://github.com/devnullvoid/pvetui/releases/download/v#{version}/pvetui_#{version}_darwin_arm64.tar.gz"
-      sha256 "e85a624d1aa78bdc3457bacf4b16fe16806eafa919352f071570f79e9cd8cec8"
+      sha256 "a55367531eaa9df5ec8e894a859bf2f7ec0858a77fa310094816bca34f5439f8"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/devnullvoid/pvetui/releases/download/v#{version}/pvetui_#{version}_linux_amd64.tar.gz"
-      sha256 "551bbc836f547897f664f4b7c8737fca92bffc67ceecf02da7b5deadcb657702"
+      sha256 "7513328b1a2a206e85e1f944ca2d90bb66b65e27196e4edcac91eed112894cb8"
     end
     on_arm do
       url "https://github.com/devnullvoid/pvetui/releases/download/v#{version}/pvetui_#{version}_linux_arm64.tar.gz"
-      sha256 "10f90585cb47d5b2776a44405fcbf6f412da9068edea5d77e06b19ab7c1d0843"
+      sha256 "d23baea34abfa1df9cf9d2654158b583b84cd74c793d4e3d7b45206ae928238b"
     end
   end
 
