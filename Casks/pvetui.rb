@@ -2,10 +2,33 @@
 cask "pvetui" do
   # rubocop:disable Cask/StanzaOrder, Cask/StanzaGrouping
 
+  version "1.3.1"
+
+  on_macos do
+    on_intel do
+      url "https://github.com/devnullvoid/pvetui/releases/download/v#{version}/pvetui_#{version}_darwin_amd64.tar.gz"
+      sha256 "7180dbf43f027168d52baffa030cf0d584434c5d4dba218f595363196940a367"
+    end
+    on_arm do
+      url "https://github.com/devnullvoid/pvetui/releases/download/v#{version}/pvetui_#{version}_darwin_arm64.tar.gz"
+      sha256 "3470b8a077e6af58e9f7114690ba4d03b748d066dcae6a5a9f9e5d6dd867d4f5"
+    end
+  end
+
+  on_linux do
+    on_intel do
+      url "https://github.com/devnullvoid/pvetui/releases/download/v#{version}/pvetui_#{version}_linux_amd64.tar.gz"
+      sha256 "e0580b40636659216bd61637fb896e5a637f36fc8e945970c239d37e4b2893c9"
+    end
+    on_arm do
+      url "https://github.com/devnullvoid/pvetui/releases/download/v#{version}/pvetui_#{version}_linux_arm64.tar.gz"
+      sha256 "84759e1cfc40bf13475da99e8fb86d98d2aebd3f72f73092e25c1c06835c96ca"
+    end
+  end
+
   name "pvetui"
   desc "Terminal user interface (TUI) for Proxmox VE"
   homepage "https://github.com/devnullvoid/pvetui"
-  version "1.3.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -13,36 +36,14 @@ cask "pvetui" do
 
   binary "pvetui"
 
-  on_macos do
-    on_intel do
-      url "https://github.com/devnullvoid/pvetui/releases/download/v#{version}/pvetui_#{version}_darwin_amd64.tar.gz"
-      sha256 "abbeb444ed714b58f0c5fbca9b35c6d6595ac957fe23dd7885140c368db8e8c6"
-    end
-    on_arm do
-      url "https://github.com/devnullvoid/pvetui/releases/download/v#{version}/pvetui_#{version}_darwin_arm64.tar.gz"
-      sha256 "9bfa32df399d6b4fe6304b268ee54d122fee472a45686b1262159ce2d292ec1d"
-    end
-  end
-
-  on_linux do
-    on_intel do
-      url "https://github.com/devnullvoid/pvetui/releases/download/v#{version}/pvetui_#{version}_linux_amd64.tar.gz"
-      sha256 "e14bcb2a218c0a63e43fed51a46607945a480f019452c68b25e7c9459c6e7d1b"
-    end
-    on_arm do
-      url "https://github.com/devnullvoid/pvetui/releases/download/v#{version}/pvetui_#{version}_linux_arm64.tar.gz"
-      sha256 "f601fd42198bd476b51006459c1063d601337396613371545d9419892ec42d91"
-    end
-  end
-
   postflight do
     system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/pvetui"] if OS.mac?
   end
 
-  caveats do
-    "pvetui requires a Proxmox VE server to connect to."
-    "Run `pvetui --help` to see configuration options."
-  end
-
   # No zap stanza required
+
+  caveats <<~EOS
+    pvetui requires a Proxmox VE server to connect to.
+    Run `pvetui --help` to see configuration options.
+  EOS
 end
