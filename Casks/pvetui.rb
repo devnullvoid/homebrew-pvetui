@@ -2,26 +2,26 @@
 cask "pvetui" do
   # rubocop:disable Cask/StanzaOrder, Cask/StanzaGrouping
 
-  version "1.4.1"
+  version "1.4.2"
 
   on_macos do
     on_intel do
-      sha256 "d270bc3daa4a13d52d66859e1f65a0223ff185dc110eddc14e89d9a1f667cb84"
+      sha256 "e6ff4ddc17cdaa8817a905f5befa23aa1a781553425b6d9c2dc6fad8ab007a96"
       url "https://github.com/devnullvoid/pvetui/releases/download/v#{version}/pvetui_#{version}_darwin_amd64.tar.gz"
     end
     on_arm do
-      sha256 "2e88408bad8e41be8f0758d0831c748a27e8d84308aeac0f51e70cbb2c548c80"
+      sha256 "e584c71fb7f6945e0408624cc7407be3014cf4c5866891a7a3657a7f11ab8569"
       url "https://github.com/devnullvoid/pvetui/releases/download/v#{version}/pvetui_#{version}_darwin_arm64.tar.gz"
     end
   end
 
   on_linux do
     on_intel do
-      sha256 "7f810c0ca0e4d316b93b15c87dee0d861471bd0f163551c2e66980996764464c"
+      sha256 "bd449986cf20d4c9693eb7c3931ed2c88c80ff55daed1f549eb00b9bc2b79ae7"
       url "https://github.com/devnullvoid/pvetui/releases/download/v#{version}/pvetui_#{version}_linux_amd64.tar.gz"
     end
     on_arm do
-      sha256 "bcc823b63dbceeba6c22fd3af459799d11a436777d44f7a54c870ac7dc6ef633"
+      sha256 "bcce1a134cfa6a1057948b54f59b0406fbcd46bf134410af7fbb7c6a8aa2e364"
       url "https://github.com/devnullvoid/pvetui/releases/download/v#{version}/pvetui_#{version}_linux_arm64.tar.gz"
     end
   end
